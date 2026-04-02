@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ALDC — Atles Lingüístic del Domini Català</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.css"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -62,7 +62,7 @@ aside{background:#FDFAF4;border-right:1px solid var(--b1);display:flex;flex-dire
 .btn-mp3:hover{background:#167a5a}
 .noson{background:#fff;border:1px solid var(--b1);padding:11px 13px;border-radius:4px;font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px}
 .btnwrap{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
-#map{height:100%}
+#map{height:100%;position:relative}
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-thumb{background:var(--b2);border-radius:3px}
 .foot{position:fixed;bottom:0;left:0;right:0;background:var(--ink);color:rgba(245,241,232,.35);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:4px 16px;display:flex;justify-content:space-between;z-index:9999}
@@ -111,7 +111,7 @@ aside{background:#FDFAF4;border-right:1px solid var(--b1);display:flex;flex-dire
   <span>ALDC · Institut d'Estudis Catalans · <a href="https://aldc.iec.cat" target="_blank">aldc.iec.cat</a></span>
   <span>Materials: Joan Veny &amp; Lídia Pons i Griera · Enquestes 1964–1978</span>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.js"></script>
 <script>
 const COL={oriental:'#2A7D5F',occidental:'#2060A0',valenciana:'#B84020',balear:'#6040A0',septentrional:'#8C6010','alguerès':'#A03060',ns:'#C0BBAF'};
 const DNOM={oriental:'Català oriental',occidental:'Català nord-occidental',valenciana:'Dialecte valencià',balear:'Balear',septentrional:'Català septentrional','alguerès':'Alguerès'};
@@ -682,34 +682,57 @@ DIALS.forEach(d=>{
 document.getElementById('cercador').addEventListener('input',e=>{cercaActual=e.target.value;renderMarkers();});
 
 // ── MAPA ─────────────────────────────────────────────────────────────────
-const map=L.map('map',{center:[40.5,1.5],zoom:6});
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{
-  attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  maxZoom:19
-}).addTo(map);
+// ── MAPLIBRE GL amb OpenFreeMap (noms en català) ─────────────────────────
+const map = new maplibregl.Map({
+  container: 'map',
+  style: 'https://tiles.openfreemap.org/styles/liberty',
+  center: [1.5, 40.5],
+  zoom: 5.5,
+  attributionControl: true
+});
 
-let mrkList=[];
-function mkIcon(loc){
+// Un cop el mapa carregui, canviem tots els noms a català
+map.on('load', () => {
+  // Canviar llengua de les capes de text a català
+  const catNames = ['name:ca', 'name', 'name:es', 'name:fr'];
+  map.getStyle().layers.forEach(layer => {
+    if (layer.type === 'symbol' && layer.layout && layer.layout['text-field']) {
+      map.setLayoutProperty(layer.id, 'text-field', [
+        'coalesce',
+        ['get', 'name:ca'],
+        ['get', 'name']
+      ]);
+    }
+  });
+  renderMarkers();
+});
+
+let mkrEls = []; // elements DOM dels markers
+
+function mkSvg(loc){
   const hasEt=!!ET[loc.id];
   const c=hasEt?(COL[loc.d]||'#888'):COL.ns;
   const r=hasEt?9:6;
   const sw=hasEt?2:1;
   const sc=hasEt?'#fff':'#bbb';
   const sz=(r+sw)*2+2;
-  return L.divIcon({className:'',html:`<svg width="${sz}" height="${sz}"><circle cx="${sz/2}" cy="${sz/2}" r="${r}" fill="${c}" stroke="${sc}" stroke-width="${sw}"/></svg>`,iconSize:[sz,sz],iconAnchor:[sz/2,sz/2]});
+  return `<svg width="${sz}" height="${sz}" style="cursor:pointer;display:block"><circle cx="${sz/2}" cy="${sz/2}" r="${r}" fill="${c}" stroke="${sc}" stroke-width="${sw}"/></svg>`;
 }
 
 function renderMarkers(){
-  mrkList.forEach(m=>map.removeLayer(m));
-  mrkList=[];
+  mkrEls.forEach(m=>m.remove());
+  mkrEls=[];
   const q=cercaActual.toLowerCase().trim();
   LL.forEach(loc=>{
     if(filtreActual!=='tots'&&loc.d!==filtreActual)return;
     if(q&&!loc.n.toLowerCase().includes(q))return;
-    const m=L.marker(loc.c,{icon:mkIcon(loc)});
-    m.on('click',function(){mostrarInfo(loc);});
-    m.addTo(map);
-    mrkList.push(m);
+    const el=document.createElement('div');
+    el.innerHTML=mkSvg(loc);
+    el.addEventListener('click',()=>mostrarInfo(loc));
+    const marker=new maplibregl.Marker({element:el,anchor:'center'})
+      .setLngLat([loc.c[1],loc.c[0]])
+      .addTo(map);
+    mkrEls.push(marker);
   });
 }
 
@@ -751,8 +774,7 @@ function mostrarInfo(loc){
 
   panel.innerHTML=h;
 }
-
-renderMarkers();
+// renderMarkers s'executa dins map.on('load')
 </script>
 </body>
 </html>
