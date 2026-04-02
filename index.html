@@ -14,16 +14,22 @@
   --or:#2A7D5F;--oc:#2060A0;--va:#B84020;--ba:#6040A0;--se:#8C6010;--al:#A03060;--ns:#C0BBAF;
 }
 html,body{height:100%;background:var(--cream);color:var(--ink);font-family:'Source Sans 3',sans-serif;font-size:15px;overflow:hidden}
-header{background:var(--ink);color:var(--cream);display:flex;align-items:stretch;border-bottom:3px solid var(--gold);flex-shrink:0}
+
+/* HEADER */
+header{background:var(--ink);color:var(--cream);display:flex;align-items:stretch;border-bottom:3px solid var(--gold)}
 .hbar{width:5px;background:var(--gold);flex-shrink:0}
-.hcont{padding:14px 22px;flex:1}
+.hcont{padding:14px 22px;flex:1;min-width:0}
 .hlabel{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
 h1{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;line-height:1.2}
 h1 em{font-style:italic;font-weight:400}
 .hmeta{font-size:11px;color:rgba(245,241,232,.45);margin-top:2px}
-.hstats{display:flex;gap:20px;padding:14px 22px;align-items:center;border-left:1px solid rgba(245,241,232,.12)}
+.hvolunt{font-size:10px;color:#C17D00;margin-top:3px}
+.hvolunt a{color:#C17D00}
+.hstats{display:flex;gap:20px;padding:14px 22px;align-items:center;border-left:1px solid rgba(245,241,232,.12);flex-shrink:0}
 .stn{font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--gold);line-height:1}
 .stl{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,241,232,.4);margin-top:2px;text-align:center}
+
+/* LAYOUT ESCRIPTORI */
 .app{display:grid;grid-template-columns:310px 1fr;height:calc(100vh - 77px)}
 aside{background:#FDFAF4;border-right:1px solid var(--b1);display:flex;flex-direction:column;overflow:hidden}
 .sec{padding:12px 15px;border-bottom:1px solid var(--b1);flex-shrink:0}
@@ -37,24 +43,24 @@ aside{background:#FDFAF4;border-right:1px solid var(--b1);display:flex;flex-dire
 .fbtn:hover{background:rgba(28,27,24,.05);color:var(--ink)}
 .fbtn.actiu{background:var(--ink);color:var(--cream)}
 .fdot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.fcnt{margin-left:auto;font-size:10px;opacity:.5;font-variant-numeric:tabular-nums}
-.infowrap{flex:1;overflow-y:auto;display:flex;flex-direction:column}
-.infoscroll{padding:16px;flex:1}
-.empty{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--faint);gap:12px;padding:20px}
-.empty p{font-size:13px;line-height:1.6}
-.locname{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;line-height:1.2;margin-bottom:3px}
+.fcnt{margin-left:auto;font-size:10px;opacity:.5}
+.infowrap{flex:1;overflow-y:auto}
+.infoscroll{padding:16px}
+.empty{padding:30px 20px;text-align:center;color:var(--faint);font-size:13px;line-height:1.6}
+
+/* CONTINGUT */
+.locname{font-family:'Playfair Display',serif;font-size:19px;font-weight:600;line-height:1.2;margin-bottom:3px}
 .locid{font-size:11px;color:var(--faint);margin-bottom:8px}
-.badges{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:14px}
+.badges{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px}
 .badge{font-size:10px;padding:3px 8px;border-radius:2px;letter-spacing:.06em;font-weight:500;text-transform:uppercase}
 .bso{background:#D4EDE4;color:#1A5C40;border:1px solid #A8D8C4}
 .bno{background:#EBEBEB;color:#777;border:1px solid #D5D5D5}
 .sep{height:1px;background:var(--b1);margin:12px 0}
-/* Etnotextos llista */
 .etno-list{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
 .etno-item{background:#fff;border:1px solid var(--b1);border-radius:5px;padding:10px 12px}
 .etno-titol{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:7px}
 .etno-btns{display:flex;gap:6px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:4px;padding:5px 11px;background:var(--ink);color:var(--cream);font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:.07em;text-transform:uppercase;font-weight:500;text-decoration:none;border-radius:3px;cursor:pointer}
+.btn{display:inline-flex;align-items:center;gap:4px;padding:5px 11px;background:var(--ink);color:var(--cream);font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:.07em;text-transform:uppercase;font-weight:500;text-decoration:none;border-radius:3px}
 .btn:hover{background:#333}
 .btn-pdf{background:transparent;color:var(--muted);border:1px solid var(--b2)}
 .btn-pdf:hover{background:rgba(28,27,24,.07);color:var(--ink)}
@@ -62,21 +68,85 @@ aside{background:#FDFAF4;border-right:1px solid var(--b1);display:flex;flex-dire
 .btn-mp3:hover{background:#167a5a}
 .noson{background:#fff;border:1px solid var(--b1);padding:11px 13px;border-radius:4px;font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px}
 .btnwrap{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+
+/* MAPA i FOOTER */
 #map{height:100%;position:relative}
+.foot{position:fixed;bottom:0;left:0;right:0;background:var(--ink);color:rgba(245,241,232,.35);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:4px 16px;display:flex;justify-content:space-between;z-index:200}
+.foot a{color:var(--gold);text-decoration:none}
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-thumb{background:var(--b2);border-radius:3px}
-.foot{position:fixed;bottom:0;left:0;right:0;background:var(--ink);color:rgba(245,241,232,.35);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:4px 16px;display:flex;justify-content:space-between;z-index:9999}
-.foot a{color:var(--gold);text-decoration:none}
+
+/* MÒBIL */
+@media(max-width:700px){
+  /* Header compacte */
+  .hlabel,.hmeta,.hvolunt{display:none}
+  h1{font-size:15px}
+  .hcont{padding:10px 12px}
+  .hstats{gap:12px;padding:10px 12px}
+  .stn{font-size:18px}
+
+  /* Layout: mapa ple */
+  .app{grid-template-columns:1fr;height:calc(100vh - 56px)}
+  aside{display:none}
+  .foot{display:none}
+
+  /* Botó filtres flotant */
+  #btn-mob-filtres{
+    position:fixed;top:calc(56px + 10px);left:10px;z-index:400;
+    display:flex;align-items:center;gap:6px;
+    background:var(--ink);color:var(--cream);
+    border:none;border-radius:20px;padding:8px 16px;
+    font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:500;
+    cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.3);
+  }
+
+  /* Panell filtres mòbil */
+  #mob-filtres-panel{
+    position:fixed;top:calc(56px + 52px);left:10px;right:10px;z-index:401;
+    background:#FDFAF4;border:1px solid var(--b2);border-radius:10px;
+    padding:14px;box-shadow:0 4px 20px rgba(0,0,0,.2);
+    display:none;
+  }
+  #mob-filtres-panel.vis{display:block}
+  #mob-cerca{width:100%;padding:8px 12px;border:1px solid var(--b2);border-radius:4px;
+    font-family:'Source Sans 3',sans-serif;font-size:14px;color:var(--ink);
+    outline:none;margin-bottom:10px}
+  #mob-cerca:focus{border-color:var(--gold)}
+  #mob-fgrid{display:flex;flex-direction:column;gap:3px}
+
+  /* Drawer info */
+  #mob-drawer{
+    position:fixed;bottom:0;left:0;right:0;z-index:500;
+    background:#FDFAF4;border-top:3px solid var(--gold);border-radius:14px 14px 0 0;
+    max-height:72vh;overflow-y:auto;
+    transform:translateY(100%);transition:transform .28s ease;
+    box-shadow:0 -4px 24px rgba(0,0,0,.2);
+    padding:0 16px 32px;
+    display:block;
+  }
+  #mob-drawer.vis{transform:translateY(0)}
+  .mob-handle{width:40px;height:4px;background:var(--b2);border-radius:2px;margin:12px auto 16px;cursor:pointer}
+  #btn-tancar-drawer{
+    position:absolute;top:12px;right:14px;
+    background:none;border:none;font-size:22px;cursor:pointer;color:var(--muted);
+  }
+  .locname{font-size:17px}
+}
+/* Amagar elements mòbil en escriptori */
+@media(min-width:701px){
+  #btn-mob-filtres,#mob-filtres-panel,#mob-drawer{display:none!important}
+}
 </style>
 </head>
 <body>
+
 <header>
   <div class="hbar"></div>
   <div class="hcont">
     <div class="hlabel">Institut d'Estudis Catalans · 1964–1978</div>
     <h1><em>Atles Lingüístic</em> del Domini Català</h1>
     <div class="hmeta">190 localitats · Etnotextos i arxius sonors · Joan Veny &amp; Lídia Pons i Griera</div>
-    <div style="font-size:10px;color:#C17D00;margin-top:3px;letter-spacing:.05em;">Edició no oficial elaborada des del voluntariat · Fonts: <a href="https://aldc.iec.cat" target="_blank" style="color:#C17D00;">aldc.iec.cat</a></div>
+    <div class="hvolunt">Edició no oficial elaborada des del voluntariat · Fonts: <a href="https://aldc.iec.cat" target="_blank">aldc.iec.cat</a></div>
   </div>
   <div class="hstats">
     <div><div class="stn">190</div><div class="stl">Localitats</div></div>
@@ -84,13 +154,14 @@ aside{background:#FDFAF4;border-right:1px solid var(--b1);display:flex;flex-dire
     <div><div class="stn">57</div><div class="stl">Etnotextos</div></div>
   </div>
 </header>
+
 <div class="app">
   <aside>
     <div class="sec">
       <div class="sectl">Cerca</div>
       <div class="sw">
         <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="5.5" cy="5.5" r="4" stroke="#1C1B18" stroke-width="1.2"/><path d="M9 9L12 12" stroke="#1C1B18" stroke-width="1.2" stroke-linecap="round"/></svg>
-        <input id="cercador" type="text" placeholder="Nom de la localitat...">
+        <input id="cercador" type="text" placeholder="Nom de la localitat..." oninput="filtraCerca(this.value)">
       </div>
     </div>
     <div class="sec">
@@ -99,25 +170,42 @@ aside{background:#FDFAF4;border-right:1px solid var(--b1);display:flex;flex-dire
     </div>
     <div class="infowrap">
       <div class="infoscroll" id="infopanel">
-        <div class="empty">
-          <p>Clica qualsevol punt del mapa per veure la informació de la localitat, les transcripcions i els arxius sonors.</p>
-        </div>
+        <div class="empty">Clica qualsevol punt del mapa per veure la informació de la localitat, les transcripcions i els arxius sonors.</div>
       </div>
     </div>
   </aside>
   <div id="map"></div>
 </div>
+
 <div class="foot">
   <span>ALDC · Institut d'Estudis Catalans · <a href="https://aldc.iec.cat" target="_blank">aldc.iec.cat</a></span>
   <span>Materials: Joan Veny &amp; Lídia Pons i Griera · Enquestes 1964–1978</span>
 </div>
+
+<!-- Elements mòbil -->
+<button id="btn-mob-filtres" onclick="toggleMobFiltres()">
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 3.5h12M4 7h6M6 10.5h2" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+  Filtres
+</button>
+
+<div id="mob-filtres-panel">
+  <input id="mob-cerca" type="text" placeholder="Cerca localitat..." oninput="filtraCerca(this.value)">
+  <div id="mob-fgrid"></div>
+</div>
+
+<div id="mob-drawer">
+  <button id="btn-tancar-drawer" onclick="tancarDrawer()">×</button>
+  <div class="mob-handle" onclick="tancarDrawer()"></div>
+  <div id="mob-info-inner">
+    <p style="color:var(--faint);text-align:center;font-size:13px">Clica un punt del mapa</p>
+  </div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.js"></script>
 <script>
 const COL={oriental:'#2A7D5F',occidental:'#2060A0',valenciana:'#B84020',balear:'#6040A0',septentrional:'#8C6010','alguerès':'#A03060',ns:'#C0BBAF'};
 const DNOM={oriental:'Català oriental',occidental:'Català nord-occidental',valenciana:'Dialecte valencià',balear:'Balear',septentrional:'Català septentrional','alguerès':'Alguerès'};
 
-// Etnotextos amb PDFs i MP3s reals extrets de aldc.iec.cat/localitats-nova/
-// Clau: número ALDC de la localitat
 const ET = {
   1:[{t:"Oda al castell de Salses",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0001SALSES_1-Oda-castell-de-Salses-DEF-RETOCAT.pdf",mp3:null}],
   2:[{t:"La verema",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/002_-ESTAGELL_La-verema-DEF-FOTO.pdf",mp3:null}],
@@ -133,97 +221,6 @@ const ET = {
     {t:"Noms del cavall segons el color",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0011Llivia_Noms-del-cavall-segons-el-color-DEF.pdf",mp3:null}
   ],
   13:[{t:"La viuda apressada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0012_Ceret_Viuda-apressada-DEF.pdf",mp3:null}],
-  17:[
-    {t:"La vianda",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/05/0021_LLAN%C3%87A_-La-vianda-DEF-RETOCAT.pdf",mp3:null},
-    {t:"La neteja de la pell del porc",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0022_Llan%C3%A7%C3%A0_-La-neteja-de-la-pell-de-porc-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/22_Neteja_pell_porc_Llan%C3%A7a-OK.mp3"}
-  ],
-  19:[
-    {t:"El ventre del porc",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0023_Alp_-El-ventre-del-porc-DEF.pdf",mp3:null},
-    {t:"Grills i llagostes",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0024_Alp_Grills-i-llagostes-DEF.pdf",mp3:null},
-    {t:"Trampes",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0025_Alp_Trampes-DEF.pdf",mp3:null},
-    {t:"A la una el salt de la pruna…",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0026_Alp_A-la-una-el-salt-de-la-pruna-DEF.pdf",mp3:null},
-    {t:"Anar a fer terralló",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00027_Alp_Anar-a-fer-terrallo-DEF.pdf",mp3:null}
-  ],
-  22:[{t:"La caça amb fura",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0030_Bassegoda_La-ca%C3%A7a-amb-fura-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/30_Ca%C3%A7a-amb-fura_Bassegoda-OK.mp3"}],
-  24:[{t:"Balls populars",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0037_CASTELLAR-DE-N_HUG_Balls-populars-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/37_Balls-populars_Castellar-de-n_Hug-OK.mp3"}],
-  27:[
-    {t:"Unces, duros i pessetes",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0041_GOSOL_Unces_duros-i-pessetes-DEF.pdf",mp3:null},
-    {t:"El flat",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0042_GOSOL_El-flat-DEF.pdf",mp3:null},
-    {t:"El curandero",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0043_GOSOL_El-curandero-DEF.pdf",mp3:null}
-  ],
-  28:[
-    {t:"La filosa",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/0044_CAMPDEVANOL_La-filosa-DEF-FOTO.pdf",mp3:null},
-    {t:"Dia de lledànies",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0045_CAMPDEVANOL_Dia-de-lledanies-DEF.pdf",mp3:null}
-  ],
-  31:[
-    {t:"La preparació del cànem",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/0047_BANYOLES_Preparacio-canem-DEF-FOTO.pdf",mp3:null},
-    {t:"Manera de fer el vi",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0048_BANYOLES_Manera-de-fer-el-vi-DEF.pdf",mp3:null}
-  ],
-  32:[{t:"Cavall fort",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0049_CAMALLERA_Cavall-fort-DEF.pdf",mp3:null}],
-  33:[
-    {t:"Feines del camp",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0050_AVIA_Feines-del-camp-DEF.pdf",mp3:null},
-    {t:"Feina a la fàbrica tèxtil",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0051_AVIA_Feina-a-la-fabrica-textil-DEF.pdf",mp3:null}
-  ],
-  35:[{t:"Les penúries econòmiques d'un sastre",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0055_GIRONA_Les-penuries-economiques-d_un-sastre-DEF.pdf",mp3:null}],
-  36:[
-    {t:"La gelada i la gebrada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0056_BEGUR_La-gelada-i-la-gebrada-DEF.pdf",mp3:null},
-    {t:"Elaboració del vi",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0057_BEGUR_Elaboracio-del-vi-DEF.pdf",mp3:null},
-    {t:"La matança del porc",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0058_BEGUR_La-matan%C3%A7a-del-porc-DEF.pdf",mp3:null},
-    {t:"El suquet",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0059_BEGUR_El-suquet-DEF.pdf",mp3:null}
-  ],
-  40:[
-    {t:"Manera de filar",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/0062_LLOBERA_Manera-de-filar-DEF-FOTO.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/62_Manera-de-filar_Llobera-de-Solsones-OK.mp3"},
-    {t:"La sega i la batuda",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0063_LLOBERA_La-sega-i-la-batuda-DEF.pdf",mp3:null},
-    {t:"Preparació del formatge",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0064_LLOBERA_Preparacio-del-formatge-DEF.pdf",mp3:null}
-  ],
-  43:[{t:"La feina de brescar",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0065_LLAGOSTERA_La-feina-de-brescar-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/65_Feina-de-brescar_Llagostera-OK.mp3"}],
-  49:[
-    {t:"Cançó del tió de Nadal",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0071_CALAF_Can%C3%A7%C3%B3-del-tio-de-Nadal-DEF.pdf",mp3:null},
-    {t:"La premsa d'oli",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0072_CALAF_La-premsa-de-l_oli-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/72_Premsa-d_oli_Calaf-OK.mp3"}
-  ],
-  50:[
-    {t:"La bugada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0073_CANOVES_La-bugada-DEF.pdf",mp3:null},
-    {t:"Tipus de cacera",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0074_CANOVES_Tipus-de-cacera-DEF.pdf",mp3:null},
-    {t:"La cacera del senglar",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0075_CANOVES_La-cacera-del-senglar-DEF.pdf",mp3:null}
-  ],
-  53:[{t:"La bugada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0078_FREIXENET_La-bugada-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/78_Bugada_Freixenet-OK.mp3"}],
-  57:[
-    {t:"Els àpats",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0091_AGUIL%C3%93_Els-apats-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/91_Apats_Aguilo-OK.mp3"},
-    {t:"Menjars i pastissos dels dies de festa",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0092_AGUIL%C3%93_Menjars-i-pastissos-dels-dies-de-festa-DEF.pdf",mp3:null},
-    {t:"La bugada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0093_AGUIL%C3%93_La-bugada-DEF.pdf",mp3:null},
-    {t:"El corró i el trill",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/0094_AGUIL%C3%93_El-corro-i-el-trill-DEF-FOTO.pdf",mp3:null}
-  ],
-  61:[
-    {t:"La curandera",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00101_CERVELLO_La-curandera-DEF.pdf",mp3:null},
-    {t:"La bugada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00102_CERVELLO_La-bugada-DEF.pdf",mp3:null},
-    {t:"Consells de tia",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00103_CERVELLO_Consells-de-tia-DEF.pdf",mp3:null},
-    {t:"L'esquellotada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00104_CERVELLO_L_esquellotada-DEF.pdf",mp3:null},
-    {t:"La bassetja",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/00105_CERVELLO_La-bassetja-DEF-FOTO.pdf",mp3:null},
-    {t:"El galerí i la galera",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00106_CERVELLO_El-galeri-i-la-galera-DEF.pdf",mp3:null},
-    {t:"La fusta de lledoner",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00107_CERVELLO_La-fusta-de-lledoner-DEF.pdf",mp3:null},
-    {t:"La matança del porc",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/00108_CERVELLO_La-matan%C3%A7a-del-porc-DEF-FOTO.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/108_Matan%C3%A7a_porc_Cervello-OK.mp3"},
-    {t:"L'elaboració de l'oli",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00109_CERVELLO_L_elaboracio-de-l_oli-DEF.pdf",mp3:null}
-  ],
-  65:[{t:"El treball de l'hort",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00112_LA-FEBRO_El-treball-de-l_hort-DEF-RETOCAT.pdf",mp3:null}],
-  66:[{t:"Collita de l'ametlla",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00113_ALIO_Collita-de-l_ametlla-DEF.pdf",mp3:null}],
-  69:[{t:"La poda del cep",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00118_CAMBRILS_La-poda-del-cep-DEF-RETOCAT.pdf",mp3:null}],
-  70:[
-    {t:"La festa de Sant Joan, ahir i avui",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00135_CIUTADELLA_La-festa-de-St-Joan_ahir-i-avui-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/135_Festa-Sant-Joan_ahir_avui_Ciutadella-OK.mp3"},
-    {t:"Plaga de formigues amb ales",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00136_CIUTADELLA_Plaga-de-formigues-amb-ales-DEF.pdf",mp3:null},
-    {t:"Embotits i present de porquejades",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00137_CIUTADELLA_Embotits-i-present-de-porquejades-DEF.pdf",mp3:null},
-    {t:"La paga dels missatges per Nadal",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00138_CIUTADELLA_La-paga-dels-missatges-per-Nadal-DEF.pdf",mp3:null}
-  ],
-  75:[{t:"La caça",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/00122_ALARO_La-ca%C3%A7a-DEF-FOTO.pdf",mp3:null}],
-  81:[
-    {t:"Els estels",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00131_FELANITX_Els-estels-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/131_Estels_Felanitx-OK.mp3"},
-    {t:"La bugada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/00132_FELANITX_La-bugada-DEF-FOTO.pdf",mp3:null}
-  ],
-  84:[{t:"La festa de les matances",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00150_EIVISSA_La-festa-de-les-matances-DEF.pdf",mp3:null}],
-  85:[
-    {t:"L'escarment del faldiller",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00151_L_ALGUER_L_escarment-del-faldiller-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/151_Escarment_faldiller_l_Alguer-OK.mp3"},
-    {t:"La pesca a l'Alguer",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00152_L_ALGUER_La-pesca-a-l_Alguer-DEF.pdf",mp3:null}
-  ],
-  // Localitats de la M-Z i altres que faltaven
   15:[
     {t:"El tel de la llet i la nata",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0013_Meranges-Tel-llet-i-nata-DEF.pdf",mp3:null},
     {t:"Formatgeres i brossat",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0014_Meranges_Formatgeres-i-brossat-DEF.pdf",mp3:null}
@@ -236,10 +233,22 @@ const ET = {
     {t:"La llaurada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/0019_MA%C3%87ANET_-La-llaurada-DEF-FOTO.pdf",mp3:null},
     {t:"Les compostes",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0020_Ma%C3%A7anet_-Les-compostes-DEF.pdf",mp3:null}
   ],
+  17:[
+    {t:"La vianda",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/05/0021_LLAN%C3%87A_-La-vianda-DEF-RETOCAT.pdf",mp3:null},
+    {t:"La neteja de la pell del porc",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0022_Llan%C3%A7%C3%A0_-La-neteja-de-la-pell-de-porc-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/22_Neteja_pell_porc_Llan%C3%A7a-OK.mp3"}
+  ],
+  19:[
+    {t:"El ventre del porc",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0023_Alp_-El-ventre-del-porc-DEF.pdf",mp3:null},
+    {t:"Grills i llagostes",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0024_Alp_Grills-i-llagostes-DEF.pdf",mp3:null},
+    {t:"Trampes",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0025_Alp_Trampes-DEF.pdf",mp3:null},
+    {t:"A la una el salt de la pruna…",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0026_Alp_A-la-una-el-salt-de-la-pruna-DEF.pdf",mp3:null},
+    {t:"Anar a fer terralló",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00027_Alp_Anar-a-fer-terrallo-DEF.pdf",mp3:null}
+  ],
   21:[
     {t:"Cleda i cabanes",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0028_Planoles_Cleda-i-cabanes-DEF.pdf",mp3:null},
     {t:"La matança del porc",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0029_Planoles_La-matan%C3%A7a-del-porc-DEF.pdf",mp3:null}
   ],
+  22:[{t:"La caça amb fura",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0030_Bassegoda_La-ca%C3%A7a-amb-fura-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/30_Ca%C3%A7a-amb-fura_Bassegoda-OK.mp3"}],
   23:[
     {t:"Preparació del formatge",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0031_OIX_Preparacio-del-formatge-DEF.pdf",mp3:null},
     {t:"L'elaboració del carbó",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0032_OIX_Elaboracio-del-carbo-DEF.pdf",mp3:null},
@@ -248,155 +257,179 @@ const ET = {
     {t:"Corrandes",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0035_OIX_Corrandes-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/35_Corrandes_Oix-OK.mp3"},
     {t:"Carbonar",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0036_OIX_Carbonar-DEF.pdf",mp3:null}
   ],
+  24:[{t:"Balls populars",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0037_CASTELLAR-DE-N_HUG_Balls-populars-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/37_Balls-populars_Castellar-de-n_Hug-OK.mp3"}],
   25:[
     {t:"Festa major de Sant Pere",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0038_ROSES_Festa-major-de-St-Pere-DEF.pdf",mp3:null},
     {t:"Amarratge i treta de les barques",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0039_ROSES_Amarratge-i-treta-deles-barques-DEF.pdf",mp3:null},
     {t:"La pesca a l'encesa",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0040_ROSES_Pesca-a-l_encesa-DEF.pdf",mp3:null}
   ],
+  27:[
+    {t:"Unces, duros i pessetes",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0041_GOSOL_Unces_duros-i-pessetes-DEF.pdf",mp3:null},
+    {t:"El flat",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0042_GOSOL_El-flat-DEF.pdf",mp3:null},
+    {t:"El curandero",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0043_GOSOL_El-curandero-DEF.pdf",mp3:null}
+  ],
+  28:[
+    {t:"La filosa",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/0044_CAMPDEVANOL_La-filosa-DEF-FOTO.pdf",mp3:null},
+    {t:"Dia de lledànies",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0045_CAMPDEVANOL_Dia-de-lledanies-DEF.pdf",mp3:null}
+  ],
   29:[{t:"La cacera de l'àliga",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0046_ST-PRIVAT_La-cacera-de-_aliga-DEF.pdf",mp3:null}],
+  31:[
+    {t:"La preparació del cànem",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/0047_BANYOLES_Preparacio-canem-DEF-FOTO.pdf",mp3:null},
+    {t:"Manera de fer el vi",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0048_BANYOLES_Manera-de-fer-el-vi-DEF.pdf",mp3:null}
+  ],
+  32:[{t:"Cavall fort",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0049_CAMALLERA_Cavall-fort-DEF.pdf",mp3:null}],
+  33:[
+    {t:"Feines del camp",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0050_AVIA_Feines-del-camp-DEF.pdf",mp3:null},
+    {t:"Feina a la fàbrica tèxtil",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0051_AVIA_Feina-a-la-fabrica-textil-DEF.pdf",mp3:null}
+  ],
   34:[
     {t:"La vida del pastor",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0052_ST-MARIA-CORCO_La-vida-del-pastor-DEF.pdf",mp3:null},
     {t:"La matança del porc",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0053_ST-MARIA-CORCO_La-matan%C3%A7a-del-porc-DEF.pdf",mp3:null},
     {t:"La bugada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/0054_ST-MARIA-CORCO_La-bugada-DEF-FOTO.pdf",mp3:null}
   ],
+  35:[{t:"Les penúries econòmiques d'un sastre",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0055_GIRONA_Les-penuries-economiques-d_un-sastre-DEF.pdf",mp3:null}],
+  36:[
+    {t:"La gelada i la gebrada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0056_BEGUR_La-gelada-i-la-gebrada-DEF.pdf",mp3:null},
+    {t:"Elaboració del vi",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0057_BEGUR_Elaboracio-del-vi-DEF.pdf",mp3:null},
+    {t:"La matança del porc",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0058_BEGUR_La-matan%C3%A7a-del-porc-DEF.pdf",mp3:null},
+    {t:"El suquet",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0059_BEGUR_El-suquet-DEF.pdf",mp3:null}
+  ],
   39:[
-    {t:"Manera de fer les botifarres",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0060_ST-EULALIA_Manera-de-fer-botifarres-DEF.pdf",mp3:null},
-    {t:"La bugada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0061_ST-EULALIA_La-bugada-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/61_Bugada_Sta-Eulalia-de-Riuprimer-OK.mp3"}
+    {t:"La matança del porc",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0060__STA-EULALIA-DE-RIUPRIMER_Matan%C3%A7a-del-porc-DEF.pdf",mp3:null},
+    {t:"La bugada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0061__STA-EULALIA-DE-RIUPRIMER_La-bugada-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/61_Bugada_Sta-Eulalia-de-Riuprimer-OK.mp3"}
   ],
-  42:[
-    {t:"La pesca del corall",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0066_PALAMOS_La-pesca-del-corall-DEF.pdf",mp3:null},
-    {t:"El Carnaval",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0067_PALAMOS_El-Carnaval-DEF.pdf",mp3:null},
-    {t:"Feines de la llar",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0068_PALAMOS_Feines-de-la-llar-DEF.pdf",mp3:null},
-    {t:"Elaboració de l'aiguardent",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0069_PALAMOS_Elaboracio-de-l_aiguardent-DEF.pdf",mp3:null},
-    {t:"Enrenou de bestiar",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0070_PALAMOS_Enrenou-de-bestiar-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/70_Enrenou-bestiar_Palamos-OK.mp3"}
+  40:[
+    {t:"Manera de filar",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/0062_LLOBERA_Manera-de-filar-DEF-FOTO.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/62_Manera-de-filar_Llobera-de-Solsones-OK.mp3"},
+    {t:"La sega i la batuda",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/0063_LLOBERA_La-sega-i-la-batuda-DEF-FOTO.pdf",mp3:null},
+    {t:"Preparació del formatge",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0064_LLOBERA_Preparacio-del-formatge-DEF.pdf",mp3:null}
   ],
-  44:[
-    {t:"La trilla",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0076_BALSARENY_La-trilla-DEF.pdf",mp3:null},
-    {t:"La bugada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0077_BALSARENY_La-bugada-DEF.pdf",mp3:null}
-  ],
+  43:[{t:"La feina de brescar",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0065_LLAGOSTERA_La-feina-de-brescar-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/65_Feina-de-brescar_Llagostera-OK.mp3"}],
   45:[
-    {t:"La sega amb la dalla",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0079_MOIA_La-sega-amb-la-dalla-DEF.pdf",mp3:null},
-    {t:"El tió de Nadal",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0080_MOIA_El-tio-de-Nadal-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/80_Tio-Nadal_Moia-OK.mp3"},
-    {t:"La caça de la perdiu",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0081_MOIA_La-ca%C3%A7a-de-la-perdiu-DEF.pdf",mp3:null}
+    {t:"Les parts de teler",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/0066_MOIA_Les-parts-del-teler-DEF-FOTO.pdf",mp3:null},
+    {t:"Aspectes de la vida rural",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0067_MOIA_Aspectes-de-la-vida-rural-DEF.pdf",mp3:null},
+    {t:"La matança del porc",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0068_MOIA_La-matan%C3%A7a-del-porc-68-DEF.pdf",mp3:null},
+    {t:"La cansalada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0069_MOIA_La-cansalada-69-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/69_Cansalada_Moia-OK.mp3"},
+    {t:"El pa de sagí",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0070_MOIA_El-pa-de-sagi-70-DEF.pdf",mp3:null}
   ],
-  46:[
-    {t:"La cacera de la llebre",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0082_CAMPINS_La-cacera-de-la-llebre-DEF.pdf",mp3:null},
-    {t:"Cacera de tords",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0083_CAMPINS_Cacera-de-tords-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/83_Cacera-tords_Campins-OK.mp3"},
-    {t:"La verema",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0084_CAMPINS_La-verema-DEF.pdf",mp3:null}
+  49:[
+    {t:"Cançó del tió de Nadal",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0071_CALAF_Can%C3%A7%C3%B3-del-tio-de-Nadal-DEF.pdf",mp3:null},
+    {t:"La premsa d'oli",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0072_CALAF_La-premsa-de-l_oli-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/72_Premsa-d_oli_Calaf-OK.mp3"}
   ],
-  47:[
-    {t:"Formes de pescar",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0085_TOSSA_Formes-de-pescar-DEF.pdf",mp3:null},
-    {t:"La pesca de la tonyina",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0086_TOSSA_Pesca-tonyina-DEF.pdf",mp3:null},
-    {t:"La síndria",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0087_TOSSA_La-sindria-DEF.pdf",mp3:null},
-    {t:"El tió de Nadal",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0088_TOSSA_El-tio-de-Nadal-DEF.pdf",mp3:null}
-  ],
-  51:[
-    {t:"Pastar el pa",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0089_ST-SALVADOR_Pastar-el-pa-DEF.pdf",mp3:null},
-    {t:"Feines de Nadal",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0090_ST-SALVADOR_Feines-de-Nadal-DEF.pdf",mp3:null}
+  50:[
+    {t:"La bugada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0073_CANOVES_La-bugada-DEF.pdf",mp3:null},
+    {t:"Tipus de cacera",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0074_CANOVES_Tipus-de-cacera-DEF.pdf",mp3:null},
+    {t:"La cacera del senglar",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0075_CANOVES_La-cacera-del-senglar-DEF.pdf",mp3:null}
   ],
   52:[
-    {t:"El cultiu de l'arròs",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0095_TORDERA_El-cultiu-de-l_arros-DEF.pdf",mp3:null},
-    {t:"La sega",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/0096_TORDERA_La-sega-DEF-FOTO.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/96_Sega_Tordera-OK.mp3"}
+    {t:"La sembra",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0076_TORDERA_La-sembra-DEF.pdf",mp3:null},
+    {t:"Pastar",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/0077_TORDERA_Pastar-DEF-FOTO.pdf",mp3:null}
   ],
-  54:[
-    {t:"La bugada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0097_VACARISSES_La-bugada-DEF.pdf",mp3:null},
-    {t:"Enramades de Corpus",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0098_VACARISSES_Enramades-de-Corpus-DEF.pdf",mp3:null}
-  ],
+  53:[{t:"La bugada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0078_FREIXENET_La-bugada-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/78_Bugada_Freixenet-OK.mp3"}],
+  54:[{t:"Fer la bugada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0079_VACARISSES_Fer-la-bugada-DEF.pdf",mp3:null}],
   55:[
-    {t:"La trilla",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0099_SENTMENAT_La-trilla-DEF.pdf",mp3:null},
-    {t:"Jocs de nens",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/00100_SENTMENAT_Jocs-de-nens-DEF-FOTO.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/100_Jocs-de-nens_Sentmenat-OK.mp3"}
+    {t:"Aquest és el pare…",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0080_SENTMENAT_Aquest-es-el-pare-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/80_Aquest-es-el-pare_Sentmenat-OK.mp3"},
+    {t:"La sardana de l'avellana…",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0081_SENTMENAT_La-sardana-de-l_avellana-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/81_Sardana-de-l_avellana_Sentmenat-OK.mp3"},
+    {t:"Cavall fort",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0082_SENTMENAT_Cavall-fort-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/82_Cavall-fort_Sentmenat-OK.mp3"},
+    {t:"La bugada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0083_SENTMENAT_La-bugada-DEF.pdf",mp3:null},
+    {t:"Invocacions arran d'una tempesta",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0084_SENTMENAT_Invocacions-arra-d_una-tempesta-DEF.pdf",mp3:null},
+    {t:"El bast i l'albarda",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/0085_SENTMENAT_El-bast-i-l_albarda-DEF-FOTO.pdf",mp3:null}
   ],
   56:[
-    {t:"La barca de pesca",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00110_ST-ANDREU_Barca-de-pesca-DEF.pdf",mp3:null},
-    {t:"La pesca del bou",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00111_ST-ANDREU_Pesca-del-bou-DEF.pdf",mp3:null}
+    {t:"Costums del dissabte de Sant Joan: guariment de la trencadura",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0086_ST-ANDREU-LLAVANERES_Costums-dissabte-de-St-Joan-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/86_Costums_-guariment_trencadura_Sant-Andreu-de-Llavaneres-OK.mp3"},
+    {t:"Vents de mar",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0087_ST-ANDREU-LLAVANERES_Vents-de-mar-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/87_Vents-de-mar_Sant-Andreu-de-Llavaneres-OK.mp3"},
+    {t:"Ormejos de la barca",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/0088_ST-ANDREU-LLAVANERES_Ormejos-de-la-barca-DEF-FOT.pdf",mp3:null},
+    {t:"La bugada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0089_ST-ANDREU-LLAVANERES_La-bugada-DEF.pdf",mp3:null},
+    {t:"Agulles de nacre",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0090_ST-ANDREU-DE-LLAVANERES_Agulles-de-nacre-DEF.pdf",mp3:null}
+  ],
+  57:[
+    {t:"Els àpats",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0091_AGUIL%C3%93_Els-apats-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/91_Apats_Aguilo-OK.mp3"},
+    {t:"Menjars i pastissos dels dies de festa",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0092_AGUIL%C3%93_Menjars-i-pastissos-dels-dies-de-festa-DEF.pdf",mp3:null},
+    {t:"La bugada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0093_AGUIL%C3%93_La-bugada-DEF.pdf",mp3:null},
+    {t:"El corró i el trill",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/0094_AGUIL%C3%93_El-corro-i-el-trill-DEF-FOTO.pdf",mp3:null}
   ],
   58:[
-    {t:"El tió de Nadal",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00114_STA-COLOMA_El-tio-de-Nadal-DEF.pdf",mp3:null},
-    {t:"El casament",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00115_STA-COLOMA_El-casament-DEF.pdf",mp3:null},
-    {t:"La bugada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00116_STA-COLOMA_La-bugada-DEF.pdf",mp3:null},
-    {t:"El corró i el trull",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00117_STA-COLOMA_El-corro-i-el-trull-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/117_Corro_trull_Sta-Coloma-de-Queralt-OK.mp3"}
+    {t:"Els àpats dels pagesos",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0095_STA-COLOMA-DE-Q_Els-apats-dels-pagesos-DEF.pdf",mp3:null},
+    {t:"Les notícies dels rentadors",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0096_STA-COLOMA-DE-Q_Les-noticies-dels-rentadors-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/96_NotIcies_rentadors_Santa-Coloma-de-Queralt-OK.mp3"},
+    {t:"Fer cagar el tió",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0097_STA-COLOMA-Q-_Fer-cagar-el-tio-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/97_Fer-cagar-tio_Santa-Coloma-de-Queralt-OK.mp3"},
+    {t:"La premsa de l'oli i la premsa del vi",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0098_STA-COLOMA-Q-_La-premsa-de-l_oli-i-la-premsa-del-vi-DEF.pdf",mp3:null},
+    {t:"La llodriguera i el cau",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/0099_STA-COLOMA-DE-Q_La-llodrigeura-i-el-cau-DEF.pdf",mp3:null}
   ],
-  59:[
-    {t:"El bestiar",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/00119_ST-JAUME_El-bestiar-DEF-FOTO.pdf",mp3:null},
-    {t:"La collita de les olives",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00120_ST-JAUME_Collita-de-les-olives-DEF.pdf",mp3:null},
-    {t:"La premsa d'oli",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00121_ST-JAUME_La-premsa-d_oli-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/121_Premsa-d_oli_St-Jaume-dels-Domenys-OK.mp3"}
+  59:[{t:"L'elaboració del vi",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/00100_ST-JAUME-SESOLIVERES_L_elaboracio-del-vi-OK.pdf",mp3:null}],
+  61:[
+    {t:"La curandera",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00101_CERVELLO_La-curandera-DEF.pdf",mp3:null},
+    {t:"La bugada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00102_CERVELLO_La-bugada-DEF.pdf",mp3:null},
+    {t:"Consells de tia",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00103_CERVELLO_Consells-de-tia-DEF.pdf",mp3:null},
+    {t:"L'esquellotada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00104_CERVELLO_L_esquellotada-DEF.pdf",mp3:null},
+    {t:"La bassetja",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/00105_CERVELLO_La-bassetja-DEF-FOTO.pdf",mp3:null},
+    {t:"El galerí i la galera",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00106_CERVELLO_El-galeri-i-la-galera-DEF.pdf",mp3:null},
+    {t:"La fusta de lledoner",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00107_CERVELLO_La-fusta-de-lledoner-DEF.pdf",mp3:null},
+    {t:"La matança del porc",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/00108_CERVELLO_La-matan%C3%A7a-del-porc-DEF-FOTO.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/108_Matan%C3%A7a_porc_Cervello-OK.mp3"},
+    {t:"L'elaboració de l'oli",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00109_CERVELLO_L_elaboracio-de-l_oli-DEF.pdf",mp3:null}
   ],
-  62:[
-    {t:"El mercat del Born",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00123_BARCELONA_El-mercat-del-Born-DEF.pdf",mp3:null},
-    {t:"El Carnaval",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00124_BARCELONA_El-Carnaval-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/124_Carnaval_Barcelona-OK.mp3"},
-    {t:"Sant Joan",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00125_BARCELONA_Sant-Joan-DEF.pdf",mp3:null},
-    {t:"Els Reis",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00126_BARCELONA_Els-Reis-DEF.pdf",mp3:null},
-    {t:"Caça de pardals",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00127_BARCELONA_La-caca-de-pardals-DEF.pdf",mp3:null},
-    {t:"La Font del Gat",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00128_BARCELONA_La-Font-del-Gat-DEF.pdf",mp3:null},
-    {t:"Joc de bitlles",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00129_BARCELONA_Joc-de-bitlles-DEF.pdf",mp3:null},
-    {t:"Joc de pilota",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00130_BARCELONA_Joc-de-pilota-DEF.pdf",mp3:null}
-  ],
-  63:[
-    {t:"Els estris de la bugada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00133_ST-BOI_Estris-bugada-DEF.pdf",mp3:null},
-    {t:"La bugada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00134_ST-BOI_La-bugada-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/134_Bugada_St-Boi-de-Llobregat-OK.mp3"}
-  ],
-  64:[
-    {t:"El bestiar",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/00119_ST-JAUME_El-bestiar-DEF-FOTO.pdf",mp3:null}
-  ],
+  63:[{t:"Les sitges",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00110_ST-BOI-LLOBREGAT_Les-sitges-DEF.pdf",mp3:null}],
+  64:[{t:"Conreu de la vinya i elaboració del vi",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00111_ST-JAUME-DOMENYS-1_Conreu-vinya-i-elaboracio-del-vi-DEF.pdf",mp3:null}],
+  65:[{t:"El treball de l'hort",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00112_LA-FEBRO_El-treball-de-l_hort-DEF-RETOCAT.pdf",mp3:null}],
+  66:[{t:"Collita de l'ametlla",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00113_ALIO_Collita-de-l_ametlla-DEF.pdf",mp3:null}],
   67:[
-    {t:"La caça del conill",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00139_ST-PERE-RIBES_La-caca-del-conill-DEF.pdf",mp3:null},
-    {t:"El bestiar",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00140_ST-PERE-RIBES_El-bestiar-DEF.pdf",mp3:null},
-    {t:"La verema",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00141_ST-PERE-RIBES_La-verema-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/141_Verema_St-Pere-de-Ribes-OK.mp3"},
-    {t:"Els xafardeigs",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00142_ST-PERE-RIBES_Els-xafardeigs-DEF.pdf",mp3:null}
+    {t:"La premsa del vi",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00114_ST-PERE-RIBES_La-premsa-del-vi-DEF.pdf",mp3:null},
+    {t:"Les vespes",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00115_ST-PERE-RIBES_Les-vespes-DEF.pdf",mp3:null},
+    {t:"La perdigussa",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00116_ST-PERE-RIBES_La-perdigussa-DEF.pdf",mp3:null},
+    {t:"El molí d'oli",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00117_ST-PERE-RIBES_El-moli-d_-oli-DEF.pdf",mp3:null}
   ],
-  68:[
-    {t:"Feines de les dones",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00143_TARRAGONA_Feines-de-les-dones-DEF.pdf",mp3:null},
-    {t:"La pesca del bou",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00144_TARRAGONA_Pesca-del-bou-DEF.pdf",mp3:null},
-    {t:"La sardana",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00145_TARRAGONA_La-sardana-DEF.pdf",mp3:null},
-    {t:"La Festa de Santa Tecla",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00146_TARRAGONA_Festa-de-Santa-Tecla-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/146_Festa-Sta-Tecla_Tarragona-OK.mp3"},
-    {t:"Gegants i gegantons",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00147_TARRAGONA_Gegants-i-gegantons-DEF.pdf",mp3:null},
-    {t:"El Carnaval",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00148_TARRAGONA_El-Carnaval-DEF.pdf",mp3:null},
-    {t:"Solcs i conreus",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/00149_TARRAGONA_Solcs-i-conreus-DEF-FOTO.pdf",mp3:null}
+  69:[{t:"La poda del cep",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00118_CAMBRILS_La-poda-del-cep-DEF-RETOCAT.pdf",mp3:null}],
+  70:[
+    {t:"La festa de Sant Joan, ahir i avui",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00135_CIUTADELLA_La-festa-de-St-Joan_ahir-i-avui-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/135_Festa-Sant-Joan_ahir_avui_Ciutadella-OK.mp3"},
+    {t:"Plaga de formigues amb ales",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00136_CIUTADELLA_Plaga-de-formigues-amb-ales-DEF.pdf",mp3:null},
+    {t:"Embotits i present de porquejades",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00137_CIUTADELLA_Embotits-i-present-de-porquejades-DEF.pdf",mp3:null},
+    {t:"La paga dels missatges per Nadal",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00138_CIUTADELLA_La-paga-dels-missatges-per-Nadal-DEF.pdf",mp3:null}
+  ],
+  72:[
+    {t:"Feines i menjars en el camp",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00139_MAO_Feines-i-menjars-en-el-camp-DEF.pdf",mp3:null},
+    {t:"Menjars de Pasqua",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00140_MAO_Menjars-de-Pasqua-DEF.pdf",mp3:null},
+    {t:"Les avarques",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00141_MAO_Les-avarques-DEF.pdf",mp3:null},
+    {t:"Preparació de l'arrop",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/00142_MAO_Preparacio-de-l_arrop-DEF-FOTO.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/142_Preparaci%C3%B3_arrop_Mao-OK.mp3"},
+    {t:"Amitgers i senyors",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00143_MAO_Amitgeres-i-senyors-DEF.pdf",mp3:null}
   ],
   73:[
-    {t:"La caça de la perdiu",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00153_POLLENCA_La-caca-de-la-perdiu-DEF.pdf",mp3:null},
-    {t:"Elaboració de la sobrassada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00154_POLLENCA_Elaboracio-sobrassada-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/154_Elaboracio_sobrassada_Pollenca-OK.mp3"}
+    {t:"Una bufetada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00119_POLLEN%C3%87A_Una-bufetada-DEF.pdf",mp3:null},
+    {t:"Preparació del formatge",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00120_POLLEN%C3%87A_Preparacio-del-formatge-DEF.pdf",mp3:null}
   ],
-  74:[
-    {t:"L'elaboració de la taronjada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00155_SOLLER_Taronjada-DEF.pdf",mp3:null},
-    {t:"La collita de la taronja",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00156_SOLLER_Collita-de-taronja-DEF.pdf",mp3:null},
-    {t:"El tren i el tramvia",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00157_SOLLER_El-tren-i-el-tramvia-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/157_Tren-tramvia_Soller-OK.mp3"}
-  ],
-  76:[
-    {t:"La festa de la Beata",pdf:"https://aldc.iec.cat/wp-content/uploads/2022/02/1286-1_La-beata-text.pdf",mp3:null},
-    {t:"La caça de la guàtlera",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00159_SINEU_Caca-guatlera-DEF.pdf",mp3:null},
-    {t:"L'elaboració de la sobrassada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00160_SINEU_Elaboracio-sobrassada-DEF.pdf",mp3:null}
-  ],
-  77:[
-    {t:"La pesca del bou",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00161_SON-SERVERA_Pesca-del-bou-DEF.pdf",mp3:null},
-    {t:"El corral i el bestiar",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00162_SON-SERVERA_El-corral-i-el-bestiar-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/162_Corral-bestiar_Son-Servera-OK.mp3"},
-    {t:"Bones maneres",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00163_SON-SERVERA_Bones-maneres-DEF.pdf",mp3:null}
-  ],
+  74:[{t:"Llaurar i esterrossar",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/00121_SOLLER_Llaurar-i-esterrossar-DEF-FOTO.pdf",mp3:null}],
+  75:[{t:"La caça",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/00122_ALARO_La-ca%C3%A7a-DEF-FOTO.pdf",mp3:null}],
   78:[
-    {t:"La vida domèstica",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00164_MONTUIRI_La-vida-domestica-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/164_Vida-domestica_Montuiri-OK.mp3"},
-    {t:"La matança",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00165_MONTUIRI_La-matanca-DEF.pdf",mp3:null}
-  ],
-  79:[
-    {t:"El mercat",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00166_PALMA_El-mercat-DEF.pdf",mp3:null},
-    {t:"L'amo i els missatges",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00167_PALMA_L_amo-i-els-missatges-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/167_Amo-missatges_Palma-OK.mp3"},
-    {t:"El molí fariner",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00168_PALMA_El-moli-fariner-DEF.pdf",mp3:null}
+    {t:"Quan ve s'hora de morir…",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00123_MONTU%C3%8FRI_Quan-ve-s_hora-de-morir-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/123-Quan-ve-s_hora-de-morir_Montuiri-OK.mp3"},
+    {t:"Xacres de la vellesa",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00124_MONTU%C3%8FRI_Xacres-de-la-vellesa-DEF.pdf",mp3:null},
+    {t:"La preparació del cànem",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/00125_MONTU%C3%8FRI_La-preparacio-del-canem-DEF-FOTO.pdf",mp3:null},
+    {t:"La sitja",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/00126_MONTU%C3%8FRI_La-sitja-DEF-FOTO.pdf",mp3:null},
+    {t:"La matança del porc",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/00127_MONTU%C3%8FRI_La-matan%C3%A7a-del-porc-DEF-FOTO.pdf",mp3:null},
+    {t:"La caça amb fura",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00128_MONTU%C3%8FRI_La-ca%C3%A7a-amb-fura-DEF.pdf",mp3:null}
   ],
   80:[
-    {t:"La caça de la llebre",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00169_LLUCMAJOR_Caca-de-la-llebre-DEF.pdf",mp3:null},
-    {t:"La calç i les calcines",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00170_LLUCMAJOR_La-calc-i-les-calcines-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/170_Calc-calcines_Llucmajor-OK.mp3"}
+    {t:"El passa-xot",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00129_LLUCMAJOR_El-passa_xot-1-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/129_Passa_xot_Llucmajor-OK.mp3"},
+    {t:"Terra de gerrer",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/000130_LLUCMAJOR_Terra-de-gerrer-DEF.pdf",mp3:null}
+  ],
+  81:[
+    {t:"Els estels",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00131_FELANITX_Els-estels-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/131_Estels_Felanitx-OK.mp3"},
+    {t:"La bugada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/00132_FELANITX_La-bugada-DEF-FOTO.pdf",mp3:null}
   ],
   82:[
-    {t:"L'elaboració del vi",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00171_SANTANYI_Elaboracio-del-vi-DEF.pdf",mp3:null},
-    {t:"La pesca",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00172_SANTANYI_La-pesca-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/172_Pesca_Santanyi-OK.mp3"}
+    {t:"Ungleres, mosteles, panadissos i abelleroles",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00133__SANTANYI_Ungleres-mosteles_panadissos-i-abelleroleres-DEF.pdf",mp3:null},
+    {t:"Falcades i gavelles",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00134_SANTANYI_Falcades-i-gavelles-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/134_Falcades_gavelles_Santanyi-OK.mp3"}
   ],
   83:[
-    {t:"La matança",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00173_ST-JOSEP_La-matanca-DEF.pdf",mp3:null},
-    {t:"La bugada",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00174_ST-JOSEP_La-bugada-DEF.pdf",mp3:null},
-    {t:"La nit de Sant Joan",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00175_ST-JOSEP_La-nit-de-Sant-Joan-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/175_Nit-Sant-Joan_St-Josep-sa-Talaia-OK.mp3"}
+    {t:"La festa de Tots Sants",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00144_St-JOSEP-DE-SA-TALAIA_La-festa-de-Tots-Sants-DEF.pdf",mp3:null},
+    {t:"El festeig",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00145_ST-JOSEP-SA-TALAIA_El-festeig-DEF.pdf",mp3:null},
+    {t:"La nit de les Ànimes",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00146_ST-JOSEP-DE-SA-TALAIA_La-nit-de-les-Animes-DEF.pdf",mp3:null},
+    {t:"Un contratemps d'un dia de matances",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00147_St-JOSEP-DE-SA-TALAIA_Un-contratemps-d_un-dia-de-matances-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/147_Contratemps_dia_matances_Sant-Josep-de-sa-Talaia-OK.mp3"},
+    {t:"Saladura d'ossos",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/04/00148_ST-JOSEP-DE-SA-TALAIA_Saladura-d_ossos-DEF-FOTO.pdf",mp3:null},
+    {t:"Jocs d'adolescents",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00149_St-JOSEP-DE-SA-TALAIA_Jocs-d_adolescents-DEF.pdf",mp3:null}
+  ],
+  84:[{t:"La festa de les matances",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00150_EIVISSA_La-festa-de-les-matances-DEF.pdf",mp3:null}],
+  85:[
+    {t:"L'escarment del faldiller",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00151_L_ALGUER_L_escarment-del-faldiller-DEF.pdf",mp3:"https://aldc.iec.cat/wp-content/uploads/2020/11/151_Escarment_faldiller_l_Alguer-OK.mp3"},
+    {t:"La pesca a l'Alguer",pdf:"https://aldc.iec.cat/wp-content/uploads/2019/03/00152_L_ALGUER_La-pesca-a-l_Alguer-DEF.pdf",mp3:null}
   ]
 };
-
-// Fitxes tècniques per localitat (número ALDC → URL)
 const FITXA={
   1:"https://aldc.iec.cat/metodologia-2/publicacio-de-resultats/fitxa-tecnica/a-z/a-z-localitats-s/1-salses/",
   2:"https://aldc.iec.cat/metodologia-2/publicacio-de-resultats/fitxa-tecnica/a-z/a-z-localitats-e/2-estagell/",
@@ -465,8 +498,6 @@ const FITXA={
   82:"https://aldc.iec.cat/metodologia-2/publicacio-de-resultats/fitxa-tecnica/a-z/a-z-localitats-s/82-santanyi/",
   83:"https://aldc.iec.cat/metodologia-2/publicacio-de-resultats/fitxa-tecnica/a-z/a-z-localitats-s/83-sant-josep-de-sa-talaia/"
 };
-
-// Localitats: coordenades i dialecte. Número = número ALDC
 const LL=[
   {id:1,n:"Salses",c:[42.83,2.92],d:"septentrional"},
   {id:2,n:"Estagell",c:[42.78,2.67],d:"septentrional"},
@@ -660,121 +691,153 @@ const LL=[
   {id:190,n:"Guardamar",c:[38.09,-0.65],d:"valenciana"}
 ];
 
-// ── UI ───────────────────────────────────────────────────────────────────
+// ── FILTRES ───────────────────────────────────────────────────────────────
 const DIALS=['tots','oriental','occidental','valenciana','balear','septentrional','alguerès'];
 const DLBL={tots:'Tots els dialectes',oriental:'Català oriental',occidental:'Català nord-occidental',valenciana:'Dialecte valencià',balear:'Balear',septentrional:'Català septentrional','alguerès':'Alguerès'};
 const DCOL={tots:'var(--ink)',oriental:'var(--or)',occidental:'var(--oc)',valenciana:'var(--va)',balear:'var(--ba)',septentrional:'var(--se)','alguerès':'var(--al)'};
 
 let filtreActual='tots', cercaActual='';
-const fgrid=document.getElementById('fgrid');
-DIALS.forEach(d=>{
-  const cnt=d==='tots'?LL.length:LL.filter(l=>l.d===d).length;
-  const btn=document.createElement('button');
-  btn.className='fbtn'+(d==='tots'?' actiu':'');
-  btn.innerHTML=`<span class="fdot" style="background:${DCOL[d]}"></span>${DLBL[d]}<span class="fcnt">${cnt}</span>`;
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('actiu'));
-    btn.classList.add('actiu');
-    filtreActual=d; renderMarkers();
-  });
-  fgrid.appendChild(btn);
-});
-document.getElementById('cercador').addEventListener('input',e=>{cercaActual=e.target.value;renderMarkers();});
 
-// ── MAPA ─────────────────────────────────────────────────────────────────
-// ── MAPLIBRE GL amb OpenFreeMap (noms en català) ─────────────────────────
+function creaBotons(gridId, callback) {
+  const g = document.getElementById(gridId);
+  if (!g) return;
+  DIALS.forEach(d => {
+    const cnt = d==='tots' ? LL.length : LL.filter(l=>l.d===d).length;
+    const btn = document.createElement('button');
+    btn.className = 'fbtn' + (d==='tots'?' actiu':'');
+    btn.dataset.dial = d;
+    btn.innerHTML = `<span class="fdot" style="background:${DCOL[d]}"></span>${DLBL[d]}<span class="fcnt">${cnt}</span>`;
+    btn.addEventListener('click', () => {
+      filtreActual = d;
+      // Marcar actiu en tots dos grids
+      document.querySelectorAll('.fbtn').forEach(b => {
+        b.classList.toggle('actiu', b.dataset.dial===d);
+      });
+      renderMarkers();
+      callback();
+    });
+    g.appendChild(btn);
+  });
+}
+
+function filtraCerca(val) {
+  cercaActual = val;
+  // Sincronitzar camps de cerca
+  document.getElementById('cercador').value = val;
+  const mc = document.getElementById('mob-cerca');
+  if (mc) mc.value = val;
+  renderMarkers();
+}
+
+// Inicialitzar botons
+creaBotons('fgrid', () => {});
+creaBotons('mob-fgrid', () => {
+  document.getElementById('mob-filtres-panel').classList.remove('vis');
+});
+
+// ── MAPA ──────────────────────────────────────────────────────────────────
 const map = new maplibregl.Map({
   container: 'map',
   style: 'https://tiles.openfreemap.org/styles/liberty',
   center: [1.5, 40.5],
-  zoom: 5.5,
-  attributionControl: true
+  zoom: 5.5
 });
 
-// Un cop el mapa carregui, canviem tots els noms a català
 map.on('load', () => {
-  // Canviar llengua de les capes de text a català
-  const catNames = ['name:ca', 'name', 'name:es', 'name:fr'];
+  // Noms en català
   map.getStyle().layers.forEach(layer => {
-    if (layer.type === 'symbol' && layer.layout && layer.layout['text-field']) {
-      map.setLayoutProperty(layer.id, 'text-field', [
-        'coalesce',
-        ['get', 'name:ca'],
-        ['get', 'name']
-      ]);
+    if (layer.type==='symbol' && layer.layout && layer.layout['text-field']) {
+      map.setLayoutProperty(layer.id, 'text-field', ['coalesce',['get','name:ca'],['get','name']]);
     }
   });
   renderMarkers();
 });
 
-let mkrEls = []; // elements DOM dels markers
+let mkrList = [];
 
-function mkSvg(loc){
-  const hasEt=!!ET[loc.id];
-  const c=hasEt?(COL[loc.d]||'#888'):COL.ns;
-  const r=hasEt?9:6;
-  const sw=hasEt?2:1;
-  const sc=hasEt?'#fff':'#bbb';
-  const sz=(r+sw)*2+2;
-  return `<svg width="${sz}" height="${sz}" style="cursor:pointer;display:block"><circle cx="${sz/2}" cy="${sz/2}" r="${r}" fill="${c}" stroke="${sc}" stroke-width="${sw}"/></svg>`;
-}
-
-function renderMarkers(){
-  mkrEls.forEach(m=>m.remove());
-  mkrEls=[];
-  const q=cercaActual.toLowerCase().trim();
-  LL.forEach(loc=>{
-    if(filtreActual!=='tots'&&loc.d!==filtreActual)return;
-    if(q&&!loc.n.toLowerCase().includes(q))return;
-    const el=document.createElement('div');
-    el.innerHTML=mkSvg(loc);
-    el.addEventListener('click',()=>mostrarInfo(loc));
-    const marker=new maplibregl.Marker({element:el,anchor:'center'})
-      .setLngLat([loc.c[1],loc.c[0]])
+function renderMarkers() {
+  mkrList.forEach(m => m.remove());
+  mkrList = [];
+  const q = cercaActual.toLowerCase().trim();
+  LL.forEach(loc => {
+    if (filtreActual!=='tots' && loc.d!==filtreActual) return;
+    if (q && !loc.n.toLowerCase().includes(q)) return;
+    const hasEt = !!ET[loc.id];
+    const c = hasEt ? (COL[loc.d]||'#888') : COL.ns;
+    const r = hasEt ? 9 : 6;
+    const sw = hasEt ? 2 : 1;
+    const sc = hasEt ? '#fff' : '#bbb';
+    const sz = (r+sw)*2+2;
+    const el = document.createElement('div');
+    el.style.cssText = `cursor:pointer;width:${sz}px;height:${sz}px`;
+    el.innerHTML = `<svg width="${sz}" height="${sz}" style="display:block;pointer-events:none"><circle cx="${sz/2}" cy="${sz/2}" r="${r}" fill="${c}" stroke="${sc}" stroke-width="${sw}"/></svg>`;
+    el.addEventListener('click', (e) => { e.stopPropagation(); mostrarInfo(loc); });
+    const m = new maplibregl.Marker({element:el, anchor:'center', clickTolerance:8})
+      .setLngLat([loc.c[1], loc.c[0]])
       .addTo(map);
-    mkrEls.push(marker);
+    mkrList.push(m);
   });
 }
 
-// ── PANELL ───────────────────────────────────────────────────────────────
-function mostrarInfo(loc){
-  const panel=document.getElementById('infopanel');
-  const c=COL[loc.d]||'#888';
-  const etnotextos=ET[loc.id]||[];
-  const fitxaUrl=FITXA[loc.id]||'https://aldc.iec.cat/localitats-nova/index-alfabetic-de-localitats/';
-  const haSo=etnotextos.length>0;
-
-  let h='';
-  h+=`<div class="locname">${loc.n}</div>`;
-  h+=`<div class="locid">Punt núm. ${loc.id} &middot; ALDC</div>`;
-  h+=`<div class="badges">`;
-  h+=`<span class="badge" style="background:${c}20;color:${c};border:1px solid ${c}50">${DNOM[loc.d]||loc.d}</span>`;
-  h+=haSo?`<span class="badge bso">Etnotext publicat</span>`:`<span class="badge bno">Sense etnotext publicat</span>`;
-  h+=`</div>`;
-  h+=`<div class="sep"></div>`;
-
-  if(haSo){
-    h+=`<div class="etno-list">`;
-    etnotextos.forEach(e=>{
-      h+=`<div class="etno-item">`;
-      h+=`<div class="etno-titol">${e.t}</div>`;
-      h+=`<div class="etno-btns">`;
-      if(e.pdf) h+=`<a class="btn btn-pdf" href="${e.pdf}" target="_blank">📄 PDF</a>`;
-      if(e.mp3) h+=`<a class="btn btn-mp3" href="${e.mp3}" target="_blank">▶ Àudio MP3</a>`;
-      h+=`</div></div>`;
+// ── INFO ──────────────────────────────────────────────────────────────────
+function construirHTML(loc) {
+  const c = COL[loc.d]||'#888';
+  const etnotextos = ET[loc.id]||[];
+  const fitxaUrl = FITXA[loc.id]||'https://aldc.iec.cat/localitats-nova/index-alfabetic-de-localitats/';
+  const haSo = etnotextos.length > 0;
+  let h = '';
+  h += `<div class="locname">${loc.n}</div>`;
+  h += `<div class="locid">Punt núm. ${loc.id} &middot; ALDC</div>`;
+  h += `<div class="badges"><span class="badge" style="background:${c}20;color:${c};border:1px solid ${c}50">${DNOM[loc.d]||loc.d}</span>`;
+  h += haSo ? '<span class="badge bso">Etnotext publicat</span>' : '<span class="badge bno">Sense etnotext publicat</span>';
+  h += '</div><div class="sep"></div>';
+  if (haSo) {
+    h += '<div class="etno-list">';
+    etnotextos.forEach(e => {
+      h += '<div class="etno-item">';
+      h += `<div class="etno-titol">${e.t}</div>`;
+      h += '<div class="etno-btns">';
+      if (e.pdf) h += `<a class="btn btn-pdf" href="${e.pdf}" target="_blank">📄 PDF</a>`;
+      if (e.mp3) h += `<a class="btn btn-mp3" href="${e.mp3}" target="_blank">▶ Àudio</a>`;
+      h += '</div></div>';
     });
-    h+=`</div>`;
+    h += '</div>';
   } else {
-    h+=`<div class="noson">Aquesta localitat no té etnotextos publicats en línia. Podeu consultar la fitxa tècnica de la localitat al portal de l'ALDC.</div>`;
+    h += '<div class="noson">Aquesta localitat no té etnotextos publicats en línia.</div>';
   }
-
-  h+=`<div class="btnwrap">`;
-  h+=`<a class="btn" href="${fitxaUrl}" target="_blank">Fitxa de la localitat ↗</a>`;
-  h+=`</div>`;
-
-  panel.innerHTML=h;
+  h += `<div class="btnwrap"><a class="btn" href="${fitxaUrl}" target="_blank">Fitxa i PDFs a l'ALDC ↗</a></div>`;
+  return h;
 }
-// renderMarkers s'executa dins map.on('load')
+
+function mostrarInfo(loc) {
+  const html = construirHTML(loc);
+  // Escriptori: panell lateral
+  document.getElementById('infopanel').innerHTML = '<div class="infoscroll">' + html + '</div>';
+  // Mòbil: drawer
+  if (window.innerWidth <= 700) {
+    document.getElementById('mob-info-inner').innerHTML = html;
+    document.getElementById('mob-drawer').classList.add('vis');
+    document.getElementById('mob-filtres-panel').classList.remove('vis');
+  }
+}
+
+// ── MÒBIL UI ──────────────────────────────────────────────────────────────
+function toggleMobFiltres() {
+  document.getElementById('mob-filtres-panel').classList.toggle('vis');
+}
+
+function tancarDrawer() {
+  document.getElementById('mob-drawer').classList.remove('vis');
+}
+
+// Tancar filtres mòbil en clicar fora
+document.addEventListener('click', e => {
+  const panel = document.getElementById('mob-filtres-panel');
+  const btn = document.getElementById('btn-mob-filtres');
+  if (panel && !panel.contains(e.target) && btn && !btn.contains(e.target)) {
+    panel.classList.remove('vis');
+  }
+});
 </script>
 </body>
 </html>
